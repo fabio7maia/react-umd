@@ -7,7 +7,6 @@
     "build": "node scripts/build-umd.mjs",
     "dev": "tsx scripts/dev.ts",
     "serve": "tsx scripts/serve.ts",
-    "serve:mbcp": "tsx scripts/serve.ts --mbcp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
