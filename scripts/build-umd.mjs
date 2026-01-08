@@ -53,6 +53,10 @@ async function buildOne({
 }
 
 async function main() {
+  const packageJson = JSON.parse(
+    await fs.readFile(new URL("../package.json", import.meta.url), "utf-8")
+  );
+
   const reactVersion = packageJson.dependencies.react;
   const reactDomVersion = packageJson.dependencies["react-dom"];
 
@@ -65,10 +69,6 @@ async function main() {
 
   console.log("2. Creating dist/ directory...");
   await fs.mkdir(distDir, { recursive: true });
-
-  const packageJson = JSON.parse(
-    await fs.readFile(new URL("../package.json", import.meta.url), "utf-8")
-  );
 
   console.log(`3. Building UMD bundle react.development.js...`);
   // React (standalone)
